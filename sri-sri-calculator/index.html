@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123b2a">
+  <meta name="description" content="SRI SRI material rate and profit calculator">
+  <title>SRI SRI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">₹</div>
+      <div>
+        <p class="eyebrow">MATERIAL & RATE TOOL</p>
+        <h1>SRI SRI Calculator</h1>
+        <p class="subtitle">Calculate material rates and compare prices</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">INPUTS</p>
+          <h2>Material details</h2>
+        </div>
+      </div>
+      <p class="helper">Edit the values below. Results update automatically.</p>
+      <div id="materials" class="materials"></div>
+      <div class="field processing-field">
+        <label for="processing">Processing cost (₹)</label>
+        <input id="processing" type="number" inputmode="decimal" min="0" step="any" value="1000">
+      </div>
+      <div class="field">
+        <label for="extra">Other adjustment (₹)</label>
+        <input id="extra" type="number" inputmode="decimal" step="any" value="0">
+        <small>This represents Excel cell J10, which is currently 0.</small>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PRICE COMPARISON</p>
+          <h2>Rates</h2>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="partyRate">Party rate (₹)</label>
+          <input id="partyRate" type="number" inputmode="decimal" step="any" value="7900">
+        </div>
+        <div class="field">
+          <label for="ourRate">Our rate (₹)</label>
+          <input id="ourRate" type="number" inputmode="decimal" step="any" value="6400">
+        </div>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="result-head">
+        <div>
+          <p class="eyebrow">LIVE SUMMARY</p>
+          <h2>Calculated results</h2>
+        </div>
+        <span class="live-dot">Live</span>
+      </div>
+      <div class="result-grid">
+        <article class="result-card primary">
+          <span>Total final rate</span>
+          <strong id="totalFinal">₹0.00</strong>
+          <small>Sum of material contributions + processing + adjustment</small>
+        </article>
+        <article class="result-card">
+          <span>Profit (Excel formula)</span>
+          <strong id="profit">₹0.00</strong>
+          <small>Party rate − our rate</small>
+        </article>
+      </div>
+      <div class="breakdown">
+        <h3>Material breakdown</h3>
+        <div id="breakdownRows"></div>
+        <div class="breakdown-total"><span>Total final rate</span><strong id="totalBreakdown">₹0.00</strong></div>
+      </div>
+      <p id="warning" class="warning" role="status" hidden></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
