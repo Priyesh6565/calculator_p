@@ -1,7 +1,7 @@
 const BASE = 1000;
 const defaults = {
   materials: [
-    { name: "cron", rate: 5300, moisture: 100, percent: 0 },
+    { name: "CORN", rate: 5300, moisture: 100, percent: 0 },
     { name: "CUTTY", rate: 3200, moisture: 200, percent: 30 },
     { name: "SHOWDUST", rate: 5100, moisture: 150, percent: 70 }
   ],
