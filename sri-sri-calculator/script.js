@@ -3,7 +3,8 @@ const defaults = {
   materials: [
     { name: "CORN", rate: 5300, moisture: 100, percent: 0 },
     { name: "CUTTY", rate: 3200, moisture: 200, percent: 30 },
-    { name: "SHOWDUST", rate: 5100, moisture: 150, percent: 70 }
+    { name: "SHOWDUST", rate: 5100, moisture: 150, percent: 70 },
+    { name: "Material 4", rate: 0, moisture: 0, percent: 0 }
   ],
   processing: 1000,
   extra: 0,
@@ -131,8 +132,7 @@ function calculate() {
     total += processing + extra;
     $("totalFinal").textContent = money(total);
     $("totalBreakdown").textContent = money(total);
-    $("ourRate").value = total.toFixed(2);
-    $("profit").textContent = money(partyRate - total);
+    $("profit").textContent = money(partyRate - ourRate);
     const pRow = document.createElement("div");
     pRow.className = "breakdown-row";
     pRow.innerHTML = `<span>Processing cost</span><strong>${money(processing)}</strong>`;
