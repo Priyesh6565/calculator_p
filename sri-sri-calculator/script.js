@@ -132,7 +132,8 @@ function calculate() {
     total += processing + extra;
     $("totalFinal").textContent = money(total);
     $("totalBreakdown").textContent = money(total);
-    $("profit").textContent = money(partyRate - ourRate);
+    $("ourRate").value = total.toFixed(2);
+    $("profit").textContent = money(partyRate - total);
     const pRow = document.createElement("div");
     pRow.className = "breakdown-row";
     pRow.innerHTML = `<span>Processing cost</span><strong>${money(processing)}</strong>`;
